@@ -4,6 +4,8 @@ import { Route, Routes } from 'react-router-dom';
 import Navbar from './Pages/Shared/Navbar';
 import Home from './Pages/Home/Home';
 import Blog from './Pages/Blog/Blog';
+import Login from './Pages/Login/Login';
+import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <Route path='/' element={<Home></Home>}></Route>
         <Route path='home' element={<Home></Home>}></Route>
         <Route path='blog' element={<Blog></Blog>}></Route>
+        <Route path='myportfolio' element={<MyPortfolio></MyPortfolio>}></Route>
+        <Route path='login' element={<Login></Login>}></Route>
       </Routes>
     </div>
   );
