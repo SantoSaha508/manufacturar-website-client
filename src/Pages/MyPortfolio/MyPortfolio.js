@@ -20,9 +20,9 @@ const MyPortfolio = () => {
                             <h1 className="text-xl font-bold">Tools: HTML, CSS, JavaScript, React, Node.js, MongoDB, 
                             </h1>
                             <p className='my-3'>
-                                Projects: <br /> 1. <a href="">Dress WareHouse</a><br /> 
-                                2. <a href="">Banking System</a> <br />
-                                <a href="">3.</a>
+                                Projects: <br /> 1. <a href="https://dress-warehouse-assgn11.web.app" target="_blank">Dress WareHouse</a><br /> 
+                                2. <a href="https://photography-assgn10.web.app/" target="_blank">Photography World</a> <br />
+                                <a href="https://assignment9-product-review.netlify.app/" target="_blank">3.Annapurna Bastralaya.com</a>
                             </p>
                          
                         </div>
