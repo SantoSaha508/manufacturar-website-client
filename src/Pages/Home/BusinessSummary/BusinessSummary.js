@@ -5,9 +5,9 @@ import product from '../../../image/icon/product.png';
 
 const BusinessSummary = () => {
     return (
-        <div className='my-20 bg-gray-400 p-5 mx-auto grid'>
+        <div className='my-20 bg-gray-300 p-5 mx-auto grid'>
             <div className='text-center text-3xl font-bold p-4'>
-                <h2>Business Summary</h2>
+                <h2 className='text-pink-700'>Business Summary</h2>
             </div>
             <div class="stats  stats-vertical lg:stats-horizontal text-center">
                 <div class="stat my-3">

@@ -1,5 +1,6 @@
 import React from 'react';
 import mypic from '../../image/portfolio/myImage.jpg';
+import Footer from '../Shared/Footer';
 
 const MyPortfolio = () => {
     return (
@@ -29,6 +30,7 @@ const MyPortfolio = () => {
                     </div>
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

@@ -1,0 +1,66 @@
+[
+    {
+        "_id": 1,
+        "name": "Square Cut Paintbrushes",
+        "price": 250,
+        "description": "This is the standard type of paint brushes for walls.Its bristles are square cut, making it ideal for flat surfaces such as interior and exterior walls, siding, paneling, and flat doors.",
+        "min_order": "1000",
+        "available": 10000,
+        "img": "https://i.ibb.co/vkLxDwT/bigbrush.jpg"
+    },
+        
+    {
+        "_id": 2,
+        "name": "Synthetic Paintbrushes",
+        "price": 175,
+        "description": "A synthetic paintbrush, made from high-quality polyester or a nylon/polyester blend, should be used when applying water-based paint since natural brushes don’t work well in this type of application.",
+        "min_order": "1000",
+        "available": 16000,
+        "img": "https://i.ibb.co/fvHGBQL/Synthetic-Paint-Brushes.jpg"
+    },
+    {
+        "_id": 3,
+        "name": "Small Paintbrushes",
+        "price": 125,
+        "description": "These types of paint brushes are tiny and delicate. Smaller paintbrushes, from one inch to two-and-a-half inches in size, are ideal type of paint brush for walls to paint tight areas, such as corners, trim, and window areas.",
+        "min_order": "1000",
+        "available": 12000,
+        "img": "https://i.ibb.co/xGRxRjX/smallbrush.jpg"
+    },
+    {
+        "_id": 4,
+        "name": "Angle Sash Paintbrushes",
+        "price": 140,
+        "description": "This short-handled, angled paintbrush was first designed to fit inside window frames to paint window sashes. Its bristles are cut on a sharp slant, which creates clean lines. It’s often called a “cutting” brush since it’s known for cutting in around walls.",
+        "min_order": "1000",
+        "available": 20000,
+        "img": "https://i.ibb.co/Q8k8MD9/angle.jpg"
+    },
+    {
+        "_id": 5,
+        "name": "Round Sash Paintbrushes",
+        "price": 80,
+        "description": "These little paintbrushes can range from 20 to 44 mm in size and feature a blunt, tapered end with soft edges. They’re typically used for decorative painting, such as faux finishes, as well as furniture painting.",
+        "min_order": "1000",
+        "available": 25000,
+        "img": "https://i.ibb.co/jJH1RK2/round.jpg"
+    },
+    {
+        "_id": 6,
+        "name": "Foam Brushes",
+        "price": 75,
+        "description": "Foam brushes aren’t meant for full wall painting, but these types of paint brushes are essential to some paint projects around the home. They’re specifically designed for use with paint, stain, and urethane, and will produce a smooth finish. They’re an inexpensive option to consider for furniture, cabinetry, and trim work.",
+        "min_order": "1000",
+        "available": 13000,
+        "img": "https://i.ibb.co/Tw0tDwf/foam.jpg"
+    },
+    {
+        "_id": 7,
+        "name": "Stencil Brushes",
+        "price": 55,
+        "description": "These unique paintbrushes should only be used to create stencil work on your walls. They differ from typical paintbrushes because they’re round and have more bristles packed together. The bristles are all the same length, so they won’t cause a mess when stenciling.",
+        "min_order": "1000",
+        "available": 15000,
+        "img": "https://i.ibb.co/n8zY7xp/stencil-brush.jpg"
+    }
+]

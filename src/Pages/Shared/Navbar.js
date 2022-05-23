@@ -19,7 +19,7 @@ const Navbar = () => {
                         {manuItems}
                     </ul>
                 </div>
-                <Link to="/home" className="btn btn-ghost normal-case text-3xl text-white font-bold ">Colors Paint</Link>
+                <Link to="/home" className="btn btn-ghost normal-case text-3xl text-white font-bold ">Colors Paint Tools Ltd</Link>
             </div>
             <div className="navbar-center hidden lg:flex mx-auto">
                 <ul className="menu menu-horizontal p-0">

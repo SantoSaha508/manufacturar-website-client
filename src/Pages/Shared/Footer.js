@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <footer class="footer p-10 bg-neutral text-neutral-content space-x-2">
             <div>
-                <h2 className='text-xl'>Colors Print Tools Ltd.<br/>Manufacture worlds best painting brush since 2002</h2>
+                <h2 className='text-xl'>Colors Paint Tools Ltd.<br/>Manufacture worlds best painting brush since 2002</h2>
                 <p className='font-bold'>Copyright © 2022 - All right reserved </p>
             </div>
             <div>

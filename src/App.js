@@ -7,6 +7,7 @@ import Blog from './Pages/Blog/Blog';
 import Login from './Pages/Login/Login';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import NotFound from './Pages/NotFound/NotFound';
+import Purchase from './Pages/Purchase/Purchase';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
         <Route path='blog' element={<Blog></Blog>}></Route>
 
         <Route path='myportfolio' element={<MyPortfolio></MyPortfolio>}></Route>
+
+        <Route path='purchase' element={<Purchase></Purchase>}></Route>
 
         <Route path='login' element={<Login></Login>}></Route>
 
