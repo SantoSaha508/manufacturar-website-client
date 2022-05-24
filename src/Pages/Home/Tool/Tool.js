@@ -16,7 +16,7 @@ const Tool = ({ tool }) => {
                 <h2 class="card-title">Available: {available}</h2>
                 <p>Description: {description}</p>
 
-                <Link className='bg-rose-500 p-2 rounded text-xl' to="/purchase">PlaceOrder</Link>
+                <Link className='bg-rose-500 p-2 rounded text-xl' to="/purchase">Place Order</Link>
             </div>
         </div>
     );
