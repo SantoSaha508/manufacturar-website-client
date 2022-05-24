@@ -8,6 +8,7 @@ import Login from './Pages/Login/Login';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import NotFound from './Pages/NotFound/NotFound';
 import Purchase from './Pages/Purchase/Purchase';
+import Signup from './Pages/Login/Signup';
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
         <Route path='purchase' element={<Purchase></Purchase>}></Route>
 
         <Route path='login' element={<Login></Login>}></Route>
+
+        <Route path='signup' element={<Signup></Signup>}></Route>
 
         <Route path='/*' element={<NotFound></NotFound>}></Route>
 

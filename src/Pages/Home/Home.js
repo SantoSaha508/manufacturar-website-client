@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import auth from '../../firebase.init';
 import Footer from '../Shared/Footer';
 import Banner from './Banner/Banner';
 import BusinessSummary from './BusinessSummary/BusinessSummary';
