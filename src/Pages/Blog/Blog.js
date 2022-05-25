@@ -40,7 +40,7 @@ const Blog = () => {
                 <h2 className='text-xl font-bold'>3. You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?
                 </h2>
                 <p>
-
+                    
                 </p>
 
             </div>

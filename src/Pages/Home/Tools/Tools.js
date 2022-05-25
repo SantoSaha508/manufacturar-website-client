@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import Purchase from '../../Purchase/Purchase';
 import Tool from '../Tool/Tool';
 
 const Tools = () => {
     const [tools, setTools] = useState([]);
+    const [purchase1, setPurchase] = useState(null);
+    console.log(purchase1);
 
     useEffect( () => {
         fetch(`http://localhost:5000/tool`)
@@ -19,6 +22,7 @@ const Tools = () => {
                     tools.map(tool => <Tool
                     key={tool._id}
                     tool={tool}
+                    setPurchase={setPurchase}
                     ></Tool>).slice(0, 6)
                 }
             </div>

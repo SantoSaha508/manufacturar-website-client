@@ -3,7 +3,8 @@ import auth from '../../firebase.init';
 import Footer from '../Shared/Footer';
 import Banner from './Banner/Banner';
 import BusinessSummary from './BusinessSummary/BusinessSummary';
-import Review from './Review/Review';
+import Section1 from './Section1/Section1';
+
 import Tools from './Tools/Tools';
 
 const Home = () => {
@@ -13,7 +14,7 @@ const Home = () => {
 
             <Tools></Tools>
             <BusinessSummary></BusinessSummary>
-            <Review></Review>
+            <Section1></Section1>
             <Footer></Footer>
         </div>
     );

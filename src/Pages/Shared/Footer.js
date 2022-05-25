@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="footer p-10 bg-neutral text-neutral-content space-x-2">
+        <footer className="footer p-10 bg-neutral text-neutral-content space-x-2 mt-20">
             <div>
                 <h2 className='text-xl'>Colors Paint Tools Ltd.<br/>Manufacture worlds best painting brush since 2002</h2>
                 <p className='font-bold'>Copyright © 2022 - All right reserved </p>

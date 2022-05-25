@@ -9,6 +9,9 @@ import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 import NotFound from './Pages/NotFound/NotFound';
 import Purchase from './Pages/Purchase/Purchase';
 import Signup from './Pages/Login/Signup';
+import RequireAuth from './Pages/Login/RequireAuth';
+import MyOrder from './Pages/MyOrder/MyOrder';
+import Reviews from './Pages/Reviews/Reviews';
 
 function App() {
   return (
@@ -23,7 +26,23 @@ function App() {
 
         <Route path='myportfolio' element={<MyPortfolio></MyPortfolio>}></Route>
 
-        <Route path='purchase' element={<Purchase></Purchase>}></Route>
+        <Route path='/purchase/' element={
+          <RequireAuth>
+            <Purchase></Purchase>
+          </RequireAuth>}>
+        </Route>
+
+        <Route path='/review/' element={
+          <RequireAuth>
+            <Reviews></Reviews>
+          </RequireAuth>}>
+        </Route>
+
+        <Route path='myorder' element={
+          <RequireAuth>
+            <MyOrder></MyOrder>
+          </RequireAuth>}>
+        </Route>
 
         <Route path='login' element={<Login></Login>}></Route>
 

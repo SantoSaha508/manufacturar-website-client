@@ -2,8 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const Tool = ({ tool }) => {
+const Tool = ({ tool, setPurchase }) => {
     const { name, img, price, min_order, description, available, } = tool;
+
+
     return (
         <div className="card card-compact  bg-base-100 shadow-xl  bg-pink-900">
             <div className='mx-auto mt-5'>
