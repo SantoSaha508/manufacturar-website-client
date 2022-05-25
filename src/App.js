@@ -26,7 +26,7 @@ function App() {
 
         <Route path='myportfolio' element={<MyPortfolio></MyPortfolio>}></Route>
 
-        <Route path='/purchase/' element={
+        <Route path='/home/:id' element={
           <RequireAuth>
             <Purchase></Purchase>
           </RequireAuth>}>

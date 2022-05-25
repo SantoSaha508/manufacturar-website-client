@@ -4,7 +4,7 @@ import auth from '../../firebase.init';
 
 const Reviews = () => {
     const [user, loading] = useAuthState(auth);
-    const [rating , setRating] = useState();
+    
 
     const submitReview = (event) => {
         event.preventDefault();
@@ -12,14 +12,21 @@ const Reviews = () => {
         const comment = event.target.comment.value;
         const rating = event.target.rating.value;
 
-        console.log(name, comment, rating);
-        setRating(name, comment, rating);
+        const review = {name, comment, rating};
+        // console.log(review);
+
+        fetch('http://localhost:5000/reviews', {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(review),
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
 
     }
 
     return (
-        <div className=''>
-            <h2>this is reviwes</h2>
+        <div>
             <div className='card p-5 '>
                 <form onSubmit={submitReview} className="formDesign mx-auto border p-5 bg-gray-400 rounded">
 

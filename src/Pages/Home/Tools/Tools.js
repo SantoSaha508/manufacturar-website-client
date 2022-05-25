@@ -5,7 +5,7 @@ import Tool from '../Tool/Tool';
 const Tools = () => {
     const [tools, setTools] = useState([]);
     const [purchase1, setPurchase] = useState(null);
-    console.log(purchase1);
+    
 
     useEffect( () => {
         fetch(`http://localhost:5000/tool`)

@@ -6,6 +6,7 @@ import Footer from '../Shared/Footer';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import Loading from '../Shared/Loading';
+import useToken from '../../hooks/useToken';
 
 const Signup = () => {
     // google sign in
@@ -22,6 +23,9 @@ const Signup = () => {
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
+    // *
+    const [token] = useToken(gUser || user);
+
     const navigate = useNavigate();
 
     let signInError;
@@ -33,15 +37,15 @@ const Signup = () => {
     if (gLoading || loading || updating) {
         return <Loading></Loading>
     }
-    if (gUser || user) {
-        console.log(gUser);
+    if (token) {
+        navigate('/home');
     }
     const onSubmit = async data => {
-        console.log(data);
+        
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
         console.log("update done");
-        navigate('/home');
+        
     };
 
     return (

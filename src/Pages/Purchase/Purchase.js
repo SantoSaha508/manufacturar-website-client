@@ -1,66 +1,120 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { useParams } from "react-router-dom";
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
-import auth from '../../firebase.init';
-import Footer from '../Shared/Footer';
+import auth from "../../firebase.init";
+// import auth from "../firebase.init";
+
 
 const Purchase = () => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user] = useAuthState(auth);
+    const { id } = useParams();
+    const [product, setProduct] = useState([]);
 
-    // useEffect( () => {
-    //     fetch(`http://localhost:5000/tool/${}`)
-    // },[])
+    useEffect(() => {
+
+        fetch(`http://localhost:5000/tool/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setProduct(data)
+            })
+    }, [id]);
+
+    const { name: productName, price, img, min_order, available } = product;
+    const [quantity, setQuantity] = useState(parseInt(product.min_order));
+
+    const { register, handleSubmit, reset } = useForm();
+    const onSubmit = data => {
+        let order = { productName, quantity: quantity || min_order, img, price, name: data.name, address: data.address, phone: data.phone, email: user?.email };
+        const total_price = order.quantity * order.price;
+        order = { ...order, total_price };
+        console.log(order);
+        fetch('http://localhost:5000/orders', {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(order),
+        })
+            .then(res => res.json())
+            .then(data => console.log(data))
+        reset()
+    };
+    
+
 
     return (
-        <div>
-            <div className="flex w-full my-5">
-                <div className="grid p-2 flex-grow card bg-base-300 rounded-box place-items-center">
-                    <div className="card bg-base-100 shadow-xl">
-                        <figure className="px-10 pt-10">
-                            <img alt="Shoes" className="rounded-xl" />
-                        </figure>
-                        <div className="card-body items-center text-center ">
-                            <h2 className="card-title">Name: { }</h2>
-                            <p className='bg-gray-200 rounded text-black'>Description: { }</p>
-                            <h2 className="card-title">Price: $ { }</h2>
-                            <h2 className="card-title">Min Order: { }</h2>
-                            <h2 className="card-title">Available: { }</h2>
+        <div className="px-2">
+            <h3 className="text-5xl text-center  font-bold  text-success py-12 px-4">
+                Your Desire Product
+            </h3>
 
+            <div className="card max-w-5xl mx-auto md:card-side bg-base-100 shadow-xl lg:flex-row-reverse md:flex-row-reverse">
+                <figure>
+                    <img className="p-4" src={img} alt="Album" />
+                </figure>
+                <div className="card-body flex items-center  justify-center">
+                    <h2 className="card-title text-amber-900">{productName}</h2>
+                    <div className="card-actions items-center justify-around">
+                        <div>
+                            <p className=" decoration-sky-500">
+                                Price: ${price}
+                                <sub className="text-[#FF0000]"> /piece</sub>
+                            </p>
+                        </div>
+                        <div className="flex gap-4 py-2">
+                            <div
+                                className="badge badge-outline tooltip text-white bg-[#6a4f64]"
+                                data-tip="Min order quantity"
+                            >
+                                Min: {min_order}
+                            </div>
+                            <div
+                                className="badge badge-outline tooltip text-white bg-[#6a4f64]"
+                                data-tip="Available quantity"
+                            >
+                                Stock : {available}
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <div className="flex items-center justify-between gap-4 ">
 
-                <div className="divider divider-horizontal">OR</div>
 
-                <div className="grid p-2 flex-grow card bg-base-300 rounded-box place-items-center">
-                    <h2>Purchase Order</h2>
-                    <form>
-                        <span className="label-text">What is your name?</span><br />
-                        <input type="text" disabled value={user?.displayName} name='name' className="input input-bordered w-100 max-w-xs my-2" /> <br />
+                    </div>
 
-                        <span className="label-text">Your Email</span><br />
-                        <input type="email" disabled value={user?.email} name='email' className="input input-bordered w-100 max-w-xs" /> <br />
 
-                        <span className="label-text">Your address?</span><br />
-                        <input type="text" placeholder="Address" name='address' className="input input-bordered w-100 max-w-xs my-2" /> <br />
+                    {/* form  */}
+                    <div className="w-full">
+                        <form onSubmit={handleSubmit(onSubmit)} className="grid gap-2 p-4">
+                            <input
+                                onChange={(e) => setQuantity(parseInt(e.target.value))}
+                                type="number"
+                                defaultValue={min_order}
+                                placeholder="Order Quantity"
+                                className="input input-bordered w-full drop-shadow-2xl"
 
-                        <span className="label-text">Your contact</span> <br />
-                        <input type="number" placeholder="Phone number" name='phone' className="input input-bordered w-100 max-w-xs" /> <br />
+                            />
+                            {
+                                quantity > available && <p className="text-[#FF0000]">You've to Order Less than or equal {available}</p>
+                            }
+                            {
+                                quantity < min_order && <p className="text-[#FF0000]">You've to Order more than or equal {min_order}</p>
+                            }
+                            <input   {...register("name", { required: true })} placeholder="Name" defaultValue={user?.displayName} className="input input-bordered drop-shadow-2xl" />
+                            <input   {...register("email", { required: true })} placeholder="Name" defaultValue={user?.email} className="input input-bordered drop-shadow-2xl" />
 
-                        <span className="label-text">Quantity</span><br />
-                        <input type="number" placeholder='min quantity' name='quantity' className="input input-bordered w-100 max-w-xs my-2" /> <br />
-
-                        <input type="submit" className='btn bg-pink-800 w-80 mx-auto' value="Order" />
-                    </form>
-
+                            <input  {...register("address", { required: true })} placeholder="Address" type="text" className="input input-bordered drop-shadow-2xl" />
+                            <input  {...register("phone", { required: true })} placeholder="Phone" type="text" className="input input-bordered drop-shadow-2xl" />
+                            <button
+                                disabled={quantity < min_order || quantity > available}
+                                className="btn btn-dark drop-shadow-2xl"
+                            >
+                                Place Order
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <div className='my-4'>
-                <Link to="/review" className='bg-success p-2 '>Give a Review</Link>
-            </div>
-            <Footer></Footer>
         </div>
-
     );
 };
 
