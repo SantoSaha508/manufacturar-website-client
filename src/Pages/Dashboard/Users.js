@@ -9,7 +9,7 @@ const Users = () => {
     const [user, isLoading, refetch] = useAuthState(auth);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/user` , {
+        fetch(`https://vast-badlands-60767.herokuapp.com/user` , {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

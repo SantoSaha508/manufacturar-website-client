@@ -14,7 +14,7 @@ const AddReview = () => {
         const review = {name, comment, rating};
         // console.log(review);
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://vast-badlands-60767.herokuapp.com/reviews', {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(review),

@@ -11,14 +11,13 @@ const MyAllOrder = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/orders?email=${user.email}`, {
+            fetch(`https://vast-badlands-60767.herokuapp.com/orders?email=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                 }
             })
                 .then(res => {
-                    console.log('res',res);
                     if(res.status === 401 || res.status === 403){
                         navigate('/home');
                     }

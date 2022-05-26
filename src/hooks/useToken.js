@@ -7,7 +7,7 @@ const useToken = user => {
         // const name = user?.user?.displayName;
         const currentUser = { email};
         if(email){
-            fetch(`http://localhost:5000/user/${email}`, {
+            fetch(`https://vast-badlands-60767.herokuapp.com/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

@@ -8,7 +8,7 @@ const Tools = () => {
     
 
     useEffect( () => {
-        fetch(`http://localhost:5000/tool`)
+        fetch(`https://vast-badlands-60767.herokuapp.com/tool`)
         .then(res => res.json())
         .then(data => setTools(data))
     },[])
@@ -23,7 +23,7 @@ const Tools = () => {
                     key={tool._id}
                     tool={tool}
                     setPurchase={setPurchase}
-                    ></Tool>).slice(0, 6)
+                    ></Tool>)
                 }
             </div>
         </div>

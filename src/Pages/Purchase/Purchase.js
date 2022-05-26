@@ -13,7 +13,7 @@ const Purchase = () => {
 
     useEffect(() => {
 
-        fetch(`http://localhost:5000/tool/${id}`)
+        fetch(`https://vast-badlands-60767.herokuapp.com/tool/${id}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -30,7 +30,7 @@ const Purchase = () => {
         const total_price = order.quantity * order.price;
         order = { ...order, total_price };
         console.log(order);
-        fetch('http://localhost:5000/orders', {
+        fetch('https://vast-badlands-60767.herokuapp.com/orders', {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(order),
