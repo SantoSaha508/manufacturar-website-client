@@ -14,8 +14,13 @@ const Home = () => {
             <Banner></Banner>
 
             <Tools></Tools>
+            <hr /><br /><hr />
             <BusinessSummary></BusinessSummary>
+            <hr /><br /><hr />
+            <br />
             <Section1></Section1>
+            <br />
+            <hr /><br /><hr />
             <SeeReviews></SeeReviews>
             <Footer></Footer>
         </div>

@@ -5,11 +5,11 @@ import product from '../../../image/icon/product.png';
 
 const BusinessSummary = () => {
     return (
-        <div className='my-20 bg-gray-300 p-5 mx-auto grid'>
+        <div className='my-20  p-5 mx-auto grid'>
             <div className='text-center text-3xl font-bold p-4'>
                 <h2 className='text-pink-700'>Business Summary</h2>
             </div>
-            <div className="stats  stats-vertical lg:stats-horizontal text-center">
+            <div className="stats  stats-vertical lg:stats-horizontal text-center mb-10">
                 <div className="stat my-3">
                     <div className="stat-figure text-primary">
                         <img className='w-10' src={revenue} alt="" />
