@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './Pages/Shared/Navbar';
@@ -10,9 +9,10 @@ import NotFound from './Pages/NotFound/NotFound';
 import Purchase from './Pages/Purchase/Purchase';
 import Signup from './Pages/Login/Signup';
 import RequireAuth from './Pages/Login/RequireAuth';
-import MyOrder from './Pages/MyOrder/MyOrder';
-import Reviews from './Pages/Reviews/Reviews';
-import MyProfile from './Pages/Home/MyProfile/MyProfile';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import MyAllOrder from './Pages/Dashboard/MyAllOrder';
+import AddReview from './Pages/Dashboard/AddReview';
+import MyProfile from './Pages/Dashboard/MyProfile';
 
 function App() {
   return (
@@ -34,24 +34,17 @@ function App() {
           </RequireAuth>}>
         </Route>
 
-        <Route path='/review/' element={
+
+        {/* dashboard */}
+        <Route path='dashboard' element={
           <RequireAuth>
-            <Reviews></Reviews>
+            <Dashboard></Dashboard>
           </RequireAuth>}>
+          <Route index element={<MyAllOrder></MyAllOrder>}></Route>
+          <Route path="addreview" element={<AddReview></AddReview>}></Route>
+          <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
         </Route>
 
-        <Route path='myorder' element={
-          <RequireAuth>
-            <MyOrder></MyOrder>
-          </RequireAuth>}>
-        </Route>
-
-        {/* for user profile */}
-        <Route path='myprofile' element={
-          <RequireAuth>
-            <MyProfile></MyProfile>
-          </RequireAuth>}>
-        </Route>
 
         <Route path='login' element={<Login></Login>}></Route>
 

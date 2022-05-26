@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
-const Reviews = () => {
+const AddReview = () => {
     const [user, loading] = useAuthState(auth);
-    
 
     const submitReview = (event) => {
         event.preventDefault();
@@ -24,6 +23,7 @@ const Reviews = () => {
         .then(data => console.log(data))
 
     }
+
 
     return (
         <div>
@@ -47,4 +47,4 @@ const Reviews = () => {
     );
 };
 
-export default Reviews;
+export default AddReview;
