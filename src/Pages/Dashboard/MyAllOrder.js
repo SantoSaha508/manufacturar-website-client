@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
@@ -33,7 +33,7 @@ const MyAllOrder = () => {
     }, [user]);
 
     const handleDelete = (email) => {
-        fetch(`http://localhost:5000/orders/${email}`,{
+        fetch(`https://vast-badlands-60767.herokuapp.com/orders/${email}`,{
                 method: 'DELETE'
         })
         .then(res => res.json())
@@ -71,7 +71,14 @@ const MyAllOrder = () => {
                                 <td>{mo.productName}</td>
                                 <td>{mo.quantity} p</td>
                                 <td>${mo.total_price}</td>
-                                <td><button className="btn btn-xs">Pay</button></td>
+
+                                <td>
+                                    {(mo.total_price && !mo.paid) && <Link to={`/dashboard/payment/${mo._id}`}><button className='btn btn-xs btn-success'>Payment</button></Link>}
+                                    {(mo.total_price && mo.paid) && <span className='text-success'>Paid</span>}
+                                </td>
+
+
+
                                 <td><button onClick={()=> handleDelete(user.email)} className="btn btn-xs">Cancel</button></td>
                             </tr>)
                         }

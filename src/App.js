@@ -1,4 +1,5 @@
 import './App.css';
+import 'react-toastify/dist/ReactToastify.css';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './Pages/Shared/Navbar';
 import Home from './Pages/Home/Home';
@@ -16,6 +17,8 @@ import MyProfile from './Pages/Dashboard/MyProfile';
 import Users from './Pages/Dashboard/Users';
 import RequireAdmin from './Pages/Login/RequireAdmin';
 import AddProducts from './Pages/Dashboard/AddProducts';
+import { ToastContainer } from 'react-toastify';
+import Payment from './Pages/Dashboard/Payment';
 
 function App() {
   return (
@@ -45,6 +48,7 @@ function App() {
           </RequireAuth>}>
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path="addreview" element={<AddReview></AddReview>}></Route>
+          <Route path="payment/:id" element={<Payment></Payment>}></Route>
           <Route path="myorder" element={<MyAllOrder></MyAllOrder>}></Route>
           <Route path="users" element={<RequireAdmin>
             <Users></Users>
@@ -62,6 +66,7 @@ function App() {
         <Route path='/*' element={<NotFound></NotFound>}></Route>
 
       </Routes>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }

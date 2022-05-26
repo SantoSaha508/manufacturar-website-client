@@ -1,6 +1,12 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Colors Paint Tools LTD [Create React App](https://colors-paint.web.app/).
+
+1. A user can purchase product 
+2. Admin can manage his business
+3. We use react routing to go different page
+4. We use firebase to create live link
+5. we add payment tools.
 
 ## Available Scripts
 

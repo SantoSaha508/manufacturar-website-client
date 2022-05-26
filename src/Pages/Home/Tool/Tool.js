@@ -8,7 +8,7 @@ const Tool = ({ tool, setPurchase }) => {
     const navigate = useNavigate()
 
     const handlePurchase = (id) => {
-        navigate(`/home`)
+        navigate(`/home/${id}`);
     }
 
 

@@ -37,13 +37,24 @@ const Blog = () => {
             </div>
 
             <div className='p-20'>
-                <h2 className='text-xl font-bold'>3. You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?
+                <h2 className='text-xl font-bold'>4. How does prototypical inheritance work?
                 </h2>
                 <p>
-                    
+                When we ask for a property or method from an object, JavaScript tries to read the property from the object itself. If the object lacks the property, then JavaScript looks for the property in the prototype object. And if that prototype object also does not contain the property, then JavaScript looks in its prototype. This process continues until it reaches the Object.prototype. The prototype of Object.prototype is NULL. Hence the search stops there and returns the undefined value. When we call student.specialSession(), The javascript searches for specialSession() method in the student object. It does not find it there. So it looks for it in the proto of student. The proto of student points to Person.prototype. It finds the method there, hence executes it, and returns the result.
                 </p>
 
             </div>
+
+            <div className='p-20'>
+                <h2 className='text-xl font-bold'>5. Why you do not set the state directly in React. For example, if you have const [products, setProducts] = useState([]). Why you do not set products = [...] instead, you use the setProducts.
+                </h2>
+                <p>
+                In React, whenever a component is rendering either in theMounting phase or in Updating Phase, it always renders all the components that are in its tree. useState is a function that takes the initial state as an argument and returns an array with two items.If we mutate the state directly, it will change the reference of the state in the previous virtual DOM as well. So, React won't be able to see that there is a change of the state and so it won't be reflected in the original DOM until we reload.
+                </p>
+
+            </div>
+
+
             <Footer></Footer>
         </div>
     );

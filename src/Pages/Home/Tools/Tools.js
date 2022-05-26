@@ -23,7 +23,7 @@ const Tools = () => {
                     key={tool._id}
                     tool={tool}
                     setPurchase={setPurchase}
-                    ></Tool>)
+                    ></Tool>).slice(0, 6)
                 }
             </div>
         </div>
