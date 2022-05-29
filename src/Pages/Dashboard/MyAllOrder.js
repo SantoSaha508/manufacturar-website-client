@@ -47,8 +47,8 @@ const MyAllOrder = () => {
 
 
     return (
-        <div>
-            <h2>this is my all orders: {myorders.length}</h2>
+        <div className='border-4 p-2 my-3'>
+            <h2 className='text-2xl my-2'>My Orders: {myorders.length}</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">
 

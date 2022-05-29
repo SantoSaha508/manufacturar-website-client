@@ -12,7 +12,7 @@ const SeeReviews = () => {
 
     return (
         <div  className='text-center font-bold text-3xl p-4 text-black my-5'>
-            <h2 className=''>See All Reviews</h2>
+            <h2 className='text-pink-700'>Consumer Reviews</h2>
 
             <div className='grid lg:grid-cols-3 sm:grid-cols-2 gap-6 p-10'>
                 {

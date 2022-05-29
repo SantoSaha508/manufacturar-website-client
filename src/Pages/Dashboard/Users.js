@@ -6,7 +6,8 @@ import UserRow from './UserRow';
 
 const Users = () => {
     const [users, setUsers] = useState([]);
-    const [user, isLoading, refetch] = useAuthState(auth);
+    const [user, isLoading] = useAuthState(auth);
+
 
     useEffect(() => {
         fetch(`https://vast-badlands-60767.herokuapp.com/user` , {
@@ -24,8 +25,8 @@ const Users = () => {
     }
 
     return (
-        <div>
-            <h2>All Users are here: {users.length}</h2>
+        <div className='border-4 my-3'>
+            <h2 className='text-2xl p-3'>Our users: {users.length}</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">
 
@@ -40,10 +41,10 @@ const Users = () => {
                     </thead>
                     <tbody>
                         {
-                            users.map(u => <UserRow
+                            users.map((u, index) => <UserRow
                                 key={u._id}
                                 u={u}
-                                refetch={refetch}
+                                index={index}
                             ></UserRow>)
                         }
                     </tbody>

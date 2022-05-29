@@ -32,20 +32,18 @@ const Payment = () => {
     }
 
     return (
-        <div>
+        <div className='grid justify-center my-10 bg-gray-300 p-5'>
 
-            <div class="card w-50 max-w-md bg-base-100 shadow-xl">
-                <div class="card-body">
-                    <h2 class="card-title">Pay for: {order.productName}</h2>
+            <div className="card w-50 max-w-md bg-base-100 shadow-xl">
+                <div className="card-body">
+                    <h2 className="card-title">Pay for: {order.productName}</h2>
                     <p>Quantity: {order.quantity}</p>
-                    <p>Total Price: {order.total_price}</p>
-                    <div class="card-actions justify-end">
-                        <button class="btn btn-primary">Buy Now</button>
-                    </div>
+                    <p>Total Price: ${order.total_price}</p>
+                    
                 </div>
             </div>
-            <div class="card flex-shrink-0 w-50 max-w-md shadow-2xl bg-base-100">
-                <div class="card-body">
+            <div className="card flex-shrink-0 w-50 max-w-md shadow-2xl bg-base-100 mt-5">
+                <div className="card-body">
                     <Elements stripe={stripePromise}>
                         <CheckOutForm />
                     </Elements>

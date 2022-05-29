@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from "../../firebase.init";
+import { toast } from "react-toastify";
 // import auth from "../firebase.init";
 
 
@@ -16,7 +17,6 @@ const Purchase = () => {
         fetch(`https://vast-badlands-60767.herokuapp.com/tool/${id}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 setProduct(data)
             })
     }, [id]);
@@ -37,6 +37,7 @@ const Purchase = () => {
         })
             .then(res => res.json())
             .then(data => console.log(data))
+        toast('Order successful.');
         reset()
     };
     
@@ -44,8 +45,8 @@ const Purchase = () => {
 
     return (
         <div className="px-2">
-            <h3 className="text-5xl text-center  font-bold  text-success py-12 px-4">
-                Your Desire Product
+            <h3 className="text-5xl text-center  font-bold  text-rose-700 py-12 px-4">
+                Your Order For
             </h3>
 
             <div className="card max-w-5xl mx-auto md:card-side bg-base-100 shadow-xl lg:flex-row-reverse md:flex-row-reverse">
