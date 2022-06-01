@@ -10,14 +10,16 @@ const Users = () => {
 
 
     useEffect(() => {
-        fetch(`https://vast-badlands-60767.herokuapp.com/user` , {
+        fetch(`https://vast-badlands-60767.herokuapp.com/users` , {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             }
         })
             .then(res => res.json())
-            .then(data => setUsers(data))
+            .then(data => {
+                setUsers(data);
+            })
     }, [user])
 
     if(isLoading){

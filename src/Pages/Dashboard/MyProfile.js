@@ -14,7 +14,7 @@ const MyProfile = () => {
     let email = user?.email;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/user/${email}`)
+        fetch(`https://vast-badlands-60767.herokuapp.com/user/${email}`)
             .then(res => res.json())
             .then(data => { setUserinfo(data) })
     }, [email])
@@ -27,7 +27,7 @@ const MyProfile = () => {
 
         let updateUser = { name: singleUser.name, email: singleUser.email, linkedIn: data.linkedIn, education: data.education, location: data.location, phone: data.phone }
         console.log(data);
-        fetch(`http://localhost:5000/user/${email}`, {
+        fetch(`https://vast-badlands-60767.herokuapp.com/user/${email}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(updateUser),
@@ -35,7 +35,7 @@ const MyProfile = () => {
             .then(res => res.json())
             .then(data => {
                 const refetch = () => {
-                    fetch(`http://localhost:5000/user/${email}`)
+                    fetch(`https://vast-badlands-60767.herokuapp.com/user/${email}`)
                         .then(res => res.json())
                         .then(data => { setUserinfo(data) })
                 }

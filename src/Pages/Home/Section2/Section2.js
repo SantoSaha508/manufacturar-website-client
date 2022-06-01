@@ -5,9 +5,9 @@ import 'react-day-picker/dist/style.css';
 
 const Section2 = () => {
     return (
-        <div class="hero  bg-base-200">
-            <div class="hero-content flex-col lg:flex-row">
-                <img src={dateimg} class="max-w-sm rounded-lg shadow-2xl" />
+        <div className="hero  bg-base-200">
+            <div className="hero-content flex-col lg:flex-row">
+                <img src={dateimg} className="max-w-sm rounded-lg shadow-2xl" />
                 <div>
                     <DayPicker />
                 </div>

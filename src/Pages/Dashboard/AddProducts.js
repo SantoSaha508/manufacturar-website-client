@@ -7,7 +7,7 @@ const AddProducts = () => {
     const onSubmit = async data => {
         console.log(data);
         const product = { name: data.name, price: data.price, img: data.img, description: data.description, min_order: data.minQuantity, available: data.stockQuantity }
-        fetch('http://localhost:5000/tools', {
+        fetch('https://vast-badlands-60767.herokuapp.com/tools', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

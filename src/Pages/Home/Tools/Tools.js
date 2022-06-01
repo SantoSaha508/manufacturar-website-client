@@ -8,7 +8,7 @@ const Tools = () => {
     
 
     useEffect( () => {
-        fetch(`http://localhost:5000/tool`)
+        fetch(`https://vast-badlands-60767.herokuapp.com/tool`)
         .then(res => res.json())
         .then(data => setTools(data))
     },[])
